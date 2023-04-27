@@ -12,7 +12,7 @@ header{
 body{
     --albastru-inchis: #0D67FF;
     --albastru: #0C98E8;
-    --bleu: #acf1f9;
+    --bleu: #d5f4f8;
     --verde: #11cb81;
     --verde-deschis: #0DFF90;
     --c1: #124be8;
@@ -136,8 +136,8 @@ img{
     border-top-right-radius: 10%;
     background: 2px var(--verde-deschis);
     padding: 10px;
-    width: 80px;
-    height: 30px;
+    /* width: 80px;
+    height: 30px; */
     text-align: center;
     box-sizing: content-box;
     font-size: 15px;
@@ -308,4 +308,18 @@ a[href^="http"]::before{
 a[href^="http"]:hover::before{
     color: var(--c1);
     transition: color 0.5s linear;
+}
+
+hr{
+    /* background-image: linear-gradient(#1f0fcf,#0DFF90); */
+    height: 10px;
+    background: repeating-linear-gradient(#64e69f, #64e69f 1px, #9198e5 2px, #9198e5 3px,#9198e5 4px);
+    border-radius: 12px;
+    opacity: 0.85;
+    border-top: 0;
+}
+
+*::selection{
+    background-color: #10eb7a9f;
+    color: #1a1de2fc;
 }

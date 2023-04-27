@@ -1,0 +1,17 @@
+@use '../../node_modules/bootstrap/scss/bootstrap.scss' with (
+    $primary: #a9f1f3,
+    $secondary: #0d2b6b,
+    $font-family-sans-serif: Noto Serif,
+    $font-size-base:1rem,
+    $h1-font-size: 1.85rem,
+    $h2-font-size:1.5rem,
+    $h3-font-size: 0.8rem,
+    $border-radius:0.15rem,
+    $grid-breakpoints: (
+     sm: 700px,
+     md: 1000px,
+    ),
+    $body-bg:#a9f1f3,
+    $btn-link-color: #79f45a,
+    $btn-font-size: 1.1rem
+)
