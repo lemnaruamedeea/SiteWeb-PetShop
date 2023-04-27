@@ -1,0 +1,105 @@
+%cod_buton{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: var(--text-meniu);
+    text-decoration: none;
+    font-weight: bold;
+    line-height: var(--inaltime-meniu);
+    transition: all 1s linear;
+}
+
+#animal, #ch-meniu{
+    display: none;
+}
+
+body{
+    --inaltime-meniu: 50px;
+    --latime-buton: 250px;
+    --culoare-meniu: var(--albastru-inchis);
+    --culoare-border-buton: black;
+    --culoare-tranzitie: #76c0eb;
+    
+}
+
+nav{
+    --text-meniu: black;
+    background-color: var(--culoare-meniu) ;
+    /* width:100%; */
+    width: calc(100vw - 18px);
+    height: var(--inaltime-meniu);
+    position: sticky;
+    top: 0;
+    margin-left: calc(-1 * var(--spatiere-pagina));
+}
+
+ul.meniu{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    li{
+        width: var(--latime-buton);
+        height: var(--inaltime-meniu);
+        background-color: var(--culoare-meniu);
+        overflow: hidden;
+        text-align: center;
+        border:1px solid var(--culoare-border-buton);
+        box-sizing: border-box;
+        &:hover{
+            overflow: visible;
+            display: block;
+            ul{
+                opacity: 1;
+                transform: scale(1,1);
+            }
+        }
+        div{
+            @extend %cod_buton;
+            color: white;
+        }
+        a{
+            @extend %cod_buton;
+            &:hover{
+                color: white;
+            }
+        }
+    }
+    > li{
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: var(--latime-buton);
+    }
+    ul{
+        padding: 0;
+        margin: 0;
+        opacity:0;
+        transition: all 0.8s linear;
+        transform: scale(0,0);
+        transform-origin: center top;
+        list-style-type: none;
+    }
+}
+
+#acasa_text{
+    color: var(--text-meniu);
+}
+
+#acasa_meniu:hover #acasa_text{
+    color: white;
+}
+
+#acasa_meniu:hover .home{
+    color: white;
+    transition: all 1s linear;
+}
+
+.home{
+    position: absolute;
+    left: 15px;
+    top:15px;
+    justify-content: center;
+    text-align:center ;
+    color: black;
+}

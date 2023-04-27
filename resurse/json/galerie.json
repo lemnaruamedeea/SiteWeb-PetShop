@@ -1,0 +1,26 @@
+{
+	"cale_galerie":"resurse/imagini/galerie",
+	"imagini": [
+		{
+			"fisier":"catel.png",
+			"descriere":"Căței",
+			"luni":["martie","februarie","noiembrie"]
+		},
+		{
+			"fisier":"pisica.jpeg",
+			"descriere":"Pisicuțe",
+			"luni":["ianuarie","februarie","iunie"]
+			
+		},
+		{
+			"fisier":"hamster.jpeg",
+			"descriere":"Hamsteri",
+			"luni":["ianuarie","noiembrie","iunie","martie"]
+		},
+		{
+			"fisier":"pesti.jpeg",
+			"descriere":"Pești",
+			"luni":["noiembrie"]
+		}
+	]
+}

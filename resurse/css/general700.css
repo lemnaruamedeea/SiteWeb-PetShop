@@ -1,0 +1,27 @@
+html{
+    font-size:14px;
+}
+
+body{
+    --spatiere-pagina:2px;
+    --padding-sectiune:5px;
+}
+
+body{
+    padding-left: var(--spatiere-pagina);
+    padding-right: var(--spatiere-pagina);  
+}
+
+#grid-pagina{
+    display: block;
+    grid-gap: 10px;
+}
+
+#grid-pagina > * {
+    margin-bottom: 15px;
+}
+
+body *{
+    animation: none;
+    transition: none;
+}

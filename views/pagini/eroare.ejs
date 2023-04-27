@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <meta name="description"
+        content="Little's PetShop. magazin de animale. hrană pentru animale. hăinuțe pentru animale. jucării pentru animale.">
+        <title> Eroare-Little's PetShop </title>
+        <%- include("../fragmente/head.ejs");  %> 
+        <link rel="stylesheet" type="text/css" href="/resurse/css/eroare.css">
+    </head>
+    <body>
+        
+    <%- include("../fragmente/header.ejs");  %> 
+
+    <main>
+        <div id="err-coloane">
+			<div id="err-imag">
+				<img src="<%- locals.imagine %>" />
+			</div>
+			<section>
+				<h2><%- locals.titlu %></h2>
+				<p><%- locals.text %></p>
+			</section>
+		</div>
+    </main>
+    
+    <%- include("../fragmente/footer.ejs");  %> 
+
+
+    </body>
+</html>

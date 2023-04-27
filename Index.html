@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html lang="ro">
+
+<head>
+    <title> Little's PetShop </title>
+    <meta charset="UTF-8"><!-- codificarea în memorie a caracterelor-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- va fi explicat când ajungem la CSS -->
+    <meta name="keywords" content="animale, ieftie, promoții, oferte">
+    <!--cuvintele cheie ale paginii; majoritatea motoarelor de căutare ignoră keywords -->
+    <!-- Google si Bing nu mai folosesc keyword-urile-->
+    <meta name="description"
+        content="Little's PetShop. magazin de animale. hrană pentru animale. hăinuțe pentru animale. jucării pentru animale.">
+    <!-- descrierea paginii, adesea apare sub link când sunt afișate rezultatele căutării -->
+    <meta name="author" content="Lemnaru Amedeea-Elena">
+    <link rel="apple-touch-icon" sizes="180x180" href="./resurse/ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./resurse/ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./resurse/ico/favicon-16x16.png">
+    <link rel="manifest" href="./resurse/ico/site.webmanifest">
+    <link rel="mask-icon" href="./resurse/ico/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="./resurse/ico/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="./resurse/ico/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff"> 
+    <link rel="stylesheet" href="resurse/css/general.css" type="text/css" />
+    <link rel="stylesheet" href="resurse/css/general1000.css" type="text/css" media="screen and (max-width: 1200px)"/>
+    <link rel="stylesheet" href="resurse/css/general700.css" type="text/css" media="screen and (max-width: 700px)"/>
+    <!--<link rel="stylesheet" href="resurse/css/nav_old.css" type="text/css" /> -->
+    <link rel="stylesheet" href="resurse/css/nav_scss.css" type="text/css" />
+    <link rel="stylesheet" href="resurse/css/nav1000.css" type="text/css" media="screen and (max-width: 1200px)"/>
+    <link rel="stylesheet" href="resurse/css/nav700.css" type="text/css" media="screen and (max-width: 700px)"/>
+    <link rel="stylesheet" href="resurse/css/printare.css" type="text/css" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"> 
+        
+</head>
+
+<body>
+    <header class="c1" id="h1">
+        <h1> Little's PetShop </h1>
+        <picture>
+            <source media="(max-width: 600px)" srcset="./resurse/Imagini/animale-companie.png">
+            <source media="(max-width: 1000px)" srcset="./resurse/Imagini/animale-companie.png">
+            <img src="./resurse/Imagini/animale-companie.png" alt="imagine-sigla">
+        </picture>
+        <p id="watermark">&copy; Lemnaru<br>Amedeea-Elena</p>
+    </header>
+    <nav>
+        <label id="animal" for="ch-meniu">
+            <img src="resurse/imagini/Animal_icon_alb.png" alt="menu">
+        </label>
+        <input id="ch-meniu" type="checkbox">
+        <ul class="meniu">
+            <li><div id="acasa_meniu"><i class="fa-solid fa-house home"></i><div id="acasa_text">Pagina principală</div></div>
+                <ul>
+                    <li><a href="#welcome"> Bine ați venit! </a>
+                        <ul>
+                            <li><a href="#despre_noi"> Despre noi </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#clienti"> Clienți mulțumiți </a></li>
+                    <li><a href="#ghid"> Ghidul copiilor </a></li>
+                    <li><a href="#promotii"> Promoții </a></li>
+                    <li><a href="#contact"> Date de contact </a></li>
+                </ul>
+            </li>
+            <li><a href="#caini"> Câini </a>
+                <ul>
+                    <li><a href="#hrana_caini"> Hrană pentru câini </a></li>
+                    <li><a href="#igiena_caini"> Igiena și îngrijire</a></li>
+                    <li><a href="#accesorii_caini"> Accesorii și jucării</a></li>
+                </ul>
+            </li>
+            <li><a href="#pisici"> Pisici </a>
+                <ul>
+                    <li><a href="#hrana_pisici"> Hrană pentru pisici </a></li>
+                    <li><a href="#igiena_pisici"> Igiena și îngrijire </a></li>
+                    <li><a href="#accesorii_pisici"> Accesorii și jucării </a></li>
+                </ul>
+            </li>    
+            <li><a href="#alte_animale"> Alte animale </a>
+                <ul>
+                    <li><a href="#produse_pasari"> Hrană pentru păsări </a></li>
+                    <li><a href="#produse_rozatoare"> Hrană pentru rozătoare </a></li>
+                    <li><a href="#produse_pesti">Produse pentru pești</a></li>
+                </ul>
+            </li>    
+        </ul>
+    </nav>
+    <main>
+        
+        <!-- <h1>
+            Little's PetShop
+        </h1> -->
+        <div id="grid-pagina">
+            <section id="welcome">
+                <h2>
+                    Bine ați venit!
+                </h2>
+                <p>Magazinul nostru online vă stă la dispoziție non-stop, astfel încât puteți comanda în orice moment cele mai bune și <b> ieftine </b> produse și puteți beneficia de cele mai tari <b> promoții </b> și <b> oferte </b>.</p>
+                <section id="despre_noi">
+                    <h3>
+                        Despre noi
+                    </h3>
+                        <strong>
+                            Scopul nostru este să aducem bucurie în viaţa animalelor de companie şi a proprietarilor acestora și să îmbunătăţim relaţia dintre <b> animale </b> şi oameni.
+                        </strong>
+                    <b> Little's PetShop </b> se dorește a fi primul Pet Shop Online care să vă ofere posibilitatea ca prin câteva click-uri să beneficiați de o gamă largă de produse, cum ar fi:
+                        <ul><!-- unordered list-->
+                            <li><b>Hrană pentru animale</b></li>
+                            <li><b>Hăinuțe pentru animale</b></li>
+                            <li><b>Jucării pentru animale</b></li>
+                        </ul>
+                </section>
+            </section>
+            <section id="intrebari">
+                <h2>
+                    Întrebări
+                </h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis neque in sapien ultrices, vel varius nisl porttitor. Nullam id risus quis nulla eleifend tristique. Maecenas vestibulum interdum ligula, et ultrices mauris fermentum at. Vestibulum eget lacinia augue. Phasellus dignissim pretium diam dictum semper. Cras in mi et turpis vulputate lobortis sit amet nec dolor. Nulla et feugiat mi, semper placerat risus.</p>
+            </section>
+            <section id="anunturi">
+                <h2>
+                    Anunțuri
+                </h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla commodo, metus elementum fermentum vestibulum, ipsum felis hendrerit felis, eget scelerisque ante eros non libero. In sapien ligula, pulvinar posuere aliquam nec, tempor id justo. Sed scelerisque ut nunc id laoreet. Proin consequat finibus fringilla. In molestie pulvinar massa vel commodo. Aenean commodo purus id elit laoreet venenatis. Maecenas id imperdiet libero. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            </section>
+            <section id="curiozitati">
+                <h2>
+                    Curiozități
+                </h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent blandit tincidunt felis, vel iaculis risus pulvinar at. Morbi vestibulum porttitor interdum. Nunc risus est, scelerisque in lorem vel, vestibulum hendrerit nibh. Mauris scelerisque metus sit amet urna commodo porta. Fusce scelerisque mauris ac est blandit, eget gravida purus vulputate. Quisque viverra felis sit amet diam malesuada faucibus. Integer a diam sollicitudin risus porta tincidunt et at ex.</p>
+            </section>
+            <section id="clienti">
+                <h2>
+                    Clienți Mulțumiți
+                </h2>
+                <strong>
+                    În caz că nu sunteți convinși că produsele noastre sunt cele mai potrivite pentru animăluțul dumneavoastră, v-am pregătit câteva videoclipuri și poze cu cei mai drăguți "clienți" ai noștri:
+                </strong>
+                <div class="container-iframe">
+                    <iframe class="video" name="ifr-video" width="500" height="300" src="https://www.youtube.com/embed/76nqFvHRm7c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></iframe>
+                    <div class="taburi-iframe">
+                        <a class="vid" href="https://www.youtube.com/embed/76nqFvHRm7c" target="ifr-video"> Colaj animăluțe </a><br/>
+                        <a class="vid" href="https://www.youtube.com/embed/1u0VOUQRhz0" target="ifr-video"> Mâncăcioșii </a><br/>
+                    </div>
+                </div>
+            </section>
+            <section id="ghid">
+                <h2>
+                    Ghidul copiilor pentru îngrijirea animalelor
+                </h2>
+                <strong>
+                    Pentru a vă ajuta, v-am pregătit și un ghid pentru copii pe care îl puteți descărca gratuit de <a href="./resurse/Pet_School_Brosura_1.pdf" download="GhidCopii.pdf" target="_blank">aici.</a>
+                </strong>
+            </section>
+            <section id="tabel">
+                <h2>
+                    Hrănirea zilnică a câinelui tău
+                </h2>
+                <div style="overflow-x: auto; width: 100%">
+                    <table id="hrana" width="500px">
+                        <caption>
+                            Hrană uscată/Zi
+                        </caption>
+                        <thead>
+                            <tr class="tabel_grosime">
+                            <th rowspan="2">Vârsta (luni)</th>
+                            <th>Mese</th>
+                            <th>5 kg</th>
+                            <th>15 kg</th>
+                            <th>25 kg</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2</td>
+                                <td>4</td>
+                                <td>85-95 g</td>
+                                <td>195-215 g</td>
+                                <td>275-300 g</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>3</td>
+                                <td>120-135 g</td>
+                                <td>275-305 g</td>
+                                <td>400-435 g</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>2</td>
+                                <td>125-140 g</td>
+                                <td>285-315 g</td>
+                                <td>420-460 g</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>2</td>
+                                <td>125-140 g</td>
+                                <td>285-310 g</td>
+                                <td>420-460 g</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>2</td>
+                                <td>125-140 g</td>
+                                <td>285-310 g</td>
+                                <td>410-450 g</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td class="tabel_center tabel_grosime" colspan="5">Ai grijă de puiul tău</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+            <section id="promotii">
+                <h2>
+                    Promoții
+                </h2>
+                <p>
+                    <strong> Promoțiile noastre: </strong>
+                </p>
+                <details> <summary>Promoții produse pentru câini</summary>
+                    <figure>
+                        <picture>
+                            <source media="(max-width: 600px)" srcset="./resurse/Imagini/bobite1.webp">
+                            <source media="(max-width: 1000px)" srcset="./resurse/Imagini/bobite1.webp"> 
+                            <img src="./resurse/Imagini/bobite1.webp" alt="imagine-sigla" width="300" height="350">
+                        </picture>
+                        <figcaption><s>75 lei</s> <ins style="font-weight:bold; text-decoration:none;">50 lei</ins></figcaption>
+                    </figure>
+                </details>
+                <details> <summary>Promoții produse pentru pisici</summary>
+                    <figure>
+                        <picture>
+                            <source media="(max-width: 600px)" srcset="./resurse/Imagini/mancare_pisici.webp">
+                            <source media="(max-width: 1000px)" srcset="./resurse/Imagini/mancare_pisici.webp">
+                            <img src="./resurse/Imagini/mancare_pisici.webp" alt="imagine-sigla" width="200" height="200">
+                        </picture>
+                        <figcaption><s>50 lei</s> <ins style="font-weight:bold; text-decoration:none;">20 lei</ins></figcaption>
+                    </figure>
+                </details>
+            </section>
+        </div>
+        <a href="#top" id="link_top"  title="Înapoi sus">
+            <div id="linktop_container">
+                <div class="linktop_triangle"></div>
+            </div>
+        </a>
+    </main>
+    <footer>
+        <section id="contact">
+            <h2>
+                Date de contact:
+            </h2>
+        </section>
+        <a href="#"> Link top </a><br/>
+        <!-- adresa, contact etc.-->
+        <i class="fa-solid fa-envelope"></i><a href="mailto:lemnaru.amedeea@gmail.com" target="_blank"> Trimite un mail</a><br/>
+        <i class="fa-solid fa-phone"></i><a href="tel:+40725483468" target="_blank"> Apelează </a><br/>
+        <i class="fa-brands fa-whatsapp"></i><a href="https://wa.link/sp3apg" target="_blank"> Whatsapp </a><br/>
+        <address> <!-- doar face textul italic-->
+           <div><i class="fa-solid fa-map-pin fa-beat"></i><a href="https://goo.gl/maps/gST5qcRMucincs876" target="_blank"> Adresa noastra </a></div> 
+        </address>
+        <div id="div_banner"><p id="banner">Acesta este un proiect școlar!</p></div>
+        <p><small> Copyright &copy; <time datetime="2023-02-28">28 februarie 2023</time> </small></p>
+    </footer>
+</body>
+</html>

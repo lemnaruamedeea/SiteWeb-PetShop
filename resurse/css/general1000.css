@@ -1,0 +1,27 @@
+html{
+    font-size:16px;
+}
+
+
+body{
+    --spatiere-pagina:4px;
+    --padding-sectiune:10px;
+}
+
+body{
+    padding-left: var(--spatiere-pagina);
+    padding-right: var(--spatiere-pagina);
+}
+
+#grid-pagina{
+    grid-template-columns: 1fr 1fr; /* repeat(2,1fr)*/
+    grid-template-areas: 
+                        "z-welcome z-welcome"    
+                        "z-anunturi z-anunturi"
+                        "z-intrebari z-curiozitati"
+                        "z-clienti z-tabel"
+                        "z-ghid z-tabel"
+                        "z-promotii z-promotii"
+                        ;
+    grid-gap: 15px;
+}

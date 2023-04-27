@@ -1,0 +1,311 @@
+
+html{
+    font-size: 18px;
+    transition: font-size 0.5s linear;
+    font-family: 'Noto Serif', serif;
+}
+
+header{
+    margin-bottom: 20px;
+}
+
+body{
+    --albastru-inchis: #0D67FF;
+    --albastru: #0C98E8;
+    --bleu: #acf1f9;
+    --verde: #11cb81;
+    --verde-deschis: #0DFF90;
+    --c1: #124be8;
+    --c2: #17f066;
+    --culoare-text: black;
+    --spatiere-pagina: 6px;
+    --padding-sectiune: 15px;
+}
+
+footer{
+    margin-top: 20px;
+}
+
+header,footer, #grid-pagina > *{
+    box-shadow: inset 0px 0px 12px 2px white;
+    border-radius: 5px;
+    padding: var(--padding-sectiune);
+}
+
+body.dark{
+    --culoare-fundal: black;
+    --culoare-text: white;
+}
+
+
+
+body{
+    background-color: var(--bleu);
+    color: var(--culoare-text);
+    padding-left: var(--spatiere-pagina);
+    padding-right: var(--spatiere-pagina);
+    
+}
+
+h1{
+    font-size: 2.5rem;
+}
+
+
+h2{
+    font-size: 1.5rem;
+}
+
+h3{
+    font-size: 1.3rem;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+#grid-pagina > *{
+    border: 3px solid var(--verde);
+    padding: var(--padding-sectiune);
+}
+#grid-pagina{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas: 
+        "z-welcome z-welcome z-welcome"
+        "z-intrebari z-anunturi z-curiozitati"
+        "z-clienti z-clienti z-tabel"
+        "z-ghid z-ghid z-tabel"
+        "z-promotii z-promotii z-promotii"
+        ;
+    grid-gap: 20px;
+    /*
+    grid-row-gap
+    grid-column-gap
+    */
+}
+
+#welcome{
+    grid-area: z-welcome;
+        
+}
+#despre_noi{
+    grid-area: z-despre;
+}
+#clienti{
+    grid-area: z-clienti;
+}
+
+#ghid{
+    grid-area: z-ghid;
+}
+
+#promotii{
+    grid-area: z-promotii;
+}
+
+#contact{
+    grid-area: z-contact;
+}
+
+#intrebari{
+    grid-area: z-intrebari;
+}
+
+#curiozitati{
+    grid-area: z-curiozitati;
+}
+
+#anunturi{
+    grid-area: z-anunturi;
+}
+
+#tabel{
+    grid-area: z-tabel;
+}
+
+.vid{
+    text-decoration: none;
+    display: block;
+    border-right-style: double;
+    border-top-style: double;
+    border-bottom-style: double;
+    border-color: var(--verde);
+    border-bottom-right-radius: 10%;
+    border-top-right-radius: 10%;
+    background: 2px var(--verde-deschis);
+    padding: 10px;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    box-sizing: content-box;
+    font-size: 15px;
+    color: var(--verde);
+}
+
+.container-iframe{
+    display: flex; 
+    flex-direction: row;
+}
+
+.taburi-iframe{
+    display: flex;
+    flex-direction: column;
+}
+
+.vid:hover{
+    background-color: var(--verde);
+    border-color: var(--verde-deschis);
+    transform: translateX(10px);
+    background-color:#0CE8C1;
+    border: 2px double #0DFF90;
+    transition: 0.5s linear;
+}
+
+.video{
+    border: 4px solid var(--verde);
+    border-style: inset;
+}
+
+th, td {
+    border: 2px solid;
+    border-collapse: collapse;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    caption-side: top;
+}
+
+td:nth-child(even){
+    border-left-color: var(--c1);
+    border-right-color: var(--c2);
+}
+
+td:nth-child(odd){
+    border-right-color: var(--c1);
+    border-left-color: var(--c2);
+}
+
+.tabel_grosime{
+    border: 3px solid black;
+}
+
+tr:hover {
+    box-shadow: inset 0px 0px 10px 1px rgb(15, 105, 221);
+    transition: all 0.3s linear;
+}
+
+.tabel_center{
+    text-align: center;
+}
+
+.linktop_triangle{
+        width: 0;
+        height: 0;
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+        border-bottom: 50px solid white;
+    border-bottom-left-radius:25px;
+    border-bottom-right-radius:25px;
+    rotate: -45deg;
+    scale: 0.8;
+    display: block;
+}
+
+#linktop_container{
+    rotate: 45deg;
+    --dimensiune:50px;
+    display: flex;
+    position: fixed;
+    bottom: 1em;
+    right:1em;
+    opacity: 0.5;
+    border: 2px solid var(--c2);
+    width: var(--dimensiune);
+    height: var(--dimensiune);
+    background-color: var(--albastru);
+    
+}
+
+#linktop_container:hover{
+    opacity: 1;
+    background-color: var(--albastru-inchis);
+    transition: all 0.4s linear;
+}
+
+main{
+    margin-top: 50px;
+}
+
+#watermark{
+    display: none;
+}
+
+::cue{
+    background: linear-gradient(var(--c1), var(--c2));
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-size: 1.4rem;
+}
+
+video{
+    display: block;
+    width: 100%;
+    min-width: 150px;
+    max-width: 250px;
+    min-height: auto;
+    max-height: none;
+}
+
+a{
+    color: var(--albastru-inchis);
+    background-position: center;
+    background-size: 0%;
+    background-repeat: no-repeat;
+}
+
+a:hover{
+    color:#082b8a;
+    transition: color 0.4s linear;
+    background-image: radial-gradient(#0008fa85 40%,#00000000 80%, #00000000 100%);
+    background-size: 100%;
+    transition: background-size 0.3s linear;
+}
+
+
+a:visited{
+    text-decoration: none;
+    color: var(--albastru-inchis);
+}
+
+a:active{
+    color: var(--c1);
+    border: 3px solid black;
+    transition: all 0.75s linear;
+}
+
+a[href^="http"]{
+    color: var(--albastru-inchis);
+    transition: all 0.4s linear;
+}
+a[href^="http"]:hover{
+    color:#082b8a;
+    transition: all 0.4s linear;
+}
+
+a[href^="http"]:visited{
+    color: var(--albastru-inchis);
+}
+
+a[href^="http"]::before{
+    content: "⮳";
+    font-size: 1.25rem;
+}
+a[href^="http"]:hover::before{
+    color: var(--c1);
+    transition: color 0.5s linear;
+}
