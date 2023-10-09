@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <meta charset="UTF-8"><!-- codificarea în memorie a caracterelor-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- va fi explicat când ajungem la CSS -->
+    <meta name="keywords" content="animale, ieftie, promoții, oferte">
+    <!--cuvintele cheie ale paginii; majoritatea motoarelor de căutare ignoră keywords -->
+    <!-- Google si Bing nu mai folosesc keyword-urile-->
+    <meta name="description"
+        content="Little's PetShop. magazin de animale. hrană pentru animale. hăinuțe pentru animale. jucării pentru animale.">
+    <!-- descrierea paginii, adesea apare sub link când sunt afișate rezultatele căutării -->
+    <link rel="stylesheet" href="/resurse/css/galerie_statica.css" type="text/css" />
+     
+    <%- include("../fragmente/head.ejs")  %>        
+</head>
+<%- include("../fragmente/header.ejs")  %>
+
+    <main>
+        <label> Nume: <input type="text" id="inp-nume"></label>
+        <!--<label> Maxim calorii: <input type="number" id="inp-calorii" value="10000"></label>-->
+        <div> Vitamine:<!-- trebuie sa aiba acelasi name ca sa formeze un grup -->
+            <p><label>A (calorii &lt; 350)
+                <input id="i_rad1"  name="gr_rad" value="0:350" type="radio"/>
+            </label></p>
+            <p><label>B (350 &le; calorii &lt; 700)
+                <input id="i_rad2"  name="gr_rad" value="350:750" type="radio"/>
+            </label>
+            <p><label>D (700 &le; calorii)
+                <input id="i_rad3" name="gr_rad" value="700:1000000000" type="radio"/>
+            </label>
+            <p><label>Toate
+                <input id="i_rad4" checked name="gr_rad" value="toate" type="radio"/>
+            </label>
+        </div>
+
+
+        <label> Pret minim: <input type="range" id="inp-pret" value="0" min="0"  max="70"> <span id="infoRange">(0)</span></label>
+        
+        <select id="planete">
+            <option value="mercur">Mercur</option>
+            <option value="venus">Venus</option>
+            <option value="pamant">Pământ</option>
+            <option value="marte">Marte</option>
+            <option value="jupiter">Jupiter</option>
+            <option value="saturn">Saturn</option>
+            <option value="uranus">Uranus</option>
+            <option value="neptun">Neptun</option>
+          </select>
+
+        
+            <div id="ordine_sortare"> Ordonare:
+                <p><label>ascendent
+                    <input id="i_rad1" checked name="nume" value="1" type="radio"/>
+                </label>
+                <p><label>descendent
+                    <input id="i_rad2" name="nume" value="-1" type="radio"/>
+                </label>
+                <p>
+            <!-- <option value="1">ascendent</option>
+            <option value="-1">descendent</option> -->
+            </div>
+        </select>
+
+        <button id="sorteaza">Sorteaza</button>
+        <p>
+        <button id="filtrare">Filtreaza</button> 
+        
+        </p>
+        
+        <p id="p-suma">Apăsați Alt+"c" pentru suma preturilor produselor afișate. </p>
+        <section id="produse">
+            <h2>Produse</h2>
+            <div class="grid-produse">
+                <% for( let ext of locals.extraterestri) { %>
+                    <article class="extraterestru" id="e"<%- ext.id%> >
+                        <h3 class="nume">Nume: <a href="/extraterestru/<%-ext.id %>" ><span class="val-nume"><%- ext.nume%></span></a></h3>
+                        <div class=<%- ext.specie%>>Specie: <span class="val-specie"><%- ext.specie%></span></div>
+                        <p class="varsta">Varsta: <span class="val-varsta"><%- ext.varsta%></span></p>
+                        <button type="button" id="add-favorite">Favorit</button>
+                    </article>
+                <% }%>
+            </div>
+        </section>
+    </main>
+
+    <h1>Formular pentru extraterestru</h1>
+    <form id="extraterrestrial-form">
+        <input type="hidden" id="favorite-alien-name" value="">
+        <input type="hidden" id="favorite-alien-species" value="">
+        <label for="message">Mesaj către extraterestru:</label>
+        <textarea id="message" placeholder="Scrie un mesaj..."></textarea>
+        <button type="button" id="send-button">Trimite mesaj</button>
+    </form>
+    
+    <br>
+    <button type="button" id="add-favorite">Favorit</button>
+    
+
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>

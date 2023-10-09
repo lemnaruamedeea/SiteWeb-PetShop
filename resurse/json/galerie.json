@@ -2,25 +2,135 @@
 	"cale_galerie":"resurse/imagini/galerie",
 	"imagini": [
 		{
-			"fisier":"catel.png",
+			"fisier":"poza_catei.jpg",
 			"descriere":"Căței",
-			"luni":["martie","februarie","noiembrie"]
+			"sfert_ora" : ["1"]
 		},
 		{
-			"fisier":"pisica.jpeg",
-			"descriere":"Pisicuțe",
-			"luni":["ianuarie","februarie","iunie"]
+			"fisier":"poza_ratuste.jpg",
+			"descriere":"Rațe",
+			"sfert_ora" : ["2"]
 			
 		},
 		{
-			"fisier":"hamster.jpeg",
+			"fisier":"poza_maimuta.jpg",
 			"descriere":"Hamsteri",
-			"luni":["ianuarie","noiembrie","iunie","martie"]
+			"sfert_ora" : ["1","3"]
 		},
 		{
-			"fisier":"pesti.jpeg",
+			"fisier":"poza_maimuta.jpg",
 			"descriere":"Pești",
-			"luni":["noiembrie"]
+			"sfert_ora" : ["2","4"]
+		},
+		{
+			"fisier":"poza_maimuta.jpg",
+			"descriere":"Căței",
+			"sfert_ora" : ["2","4"]
+		},
+		{
+			"fisier":"poza_maimuta.jpg",
+			"descriere":"Pisicuțe",
+			"sfert_ora" : ["1","3"]
+			
+		},
+		{
+			"fisier":"poza_maimuta.jpg",
+			"descriere":"Hamsteri",
+			"sfert_ora" : ["1","3"]
+		},
+		{
+			"fisier":"poza_maimuta.jpg",
+			"descriere":"Pești",
+			"sfert_ora" : ["1","3"]
+		},
+		{
+			"fisier":"poza_maimuta.jpg",
+			"descriere":"Căței",
+			"sfert_ora" : ["2","4"]
+		},
+		{
+			"fisier":"poza_maimuta.jpg",
+			"descriere":"Pisicuțe",
+			"sfert_ora" : ["1","3","2","4"]
+			
+		},
+		{
+			"fisier":"poza_maimuta.jpg",
+			"descriere":"Hamsteri",
+			"sfert_ora" : ["1","3"]
+		},
+		{
+			"fisier":"poza_maimuta.jpg",
+			"descriere":"Pești",
+			"sfert_ora" : ["2","4"]
+		},
+		{
+			"fisier":"poza_maimuta.jpg",
+			"descriere":"Căței",
+			"sfert_ora" : ["2","4"]
+		},
+		{
+			"fisier":"poza_maimuta.jpg",
+			"descriere":"Pisicuțe",
+			"sfert_ora" : ["1","3"]
+			
+		},
+		{
+			"fisier":"poza_maimuta.jpg",
+			"descriere":"Hamsteri",
+			"sfert_ora" : ["2","4"]
+		},
+		{
+			"fisier":"poza_maimuta.jpg",
+			"descriere":"Pești",
+			"sfert_ora" : ["1","3"]
+		},
+		{
+			"fisier":"poza_maimuta.jpg",
+			"descriere":"Hamsteri",
+			"sfert_ora" : ["2","4"]
+		},
+		{
+			"fisier":"poza_maimuta.jpg",
+			"descriere":"Pești",
+			"sfert_ora" : ["1","3"]
+		},
+		{
+			"fisier":"poza_maimuta.jpg",
+			"descriere":"Pisicuțe",
+			"sfert_ora" : ["1","2","3","4"]
+			
+		},
+		{
+			"fisier":"poza_maimuta.jpg",
+			"descriere":"Pești",
+			"sfert_ora" : ["1","3"]
+		},
+		{
+			"fisier":"poza_maimuta.jpg",
+			"descriere":"Hamsteri",
+			"sfert_ora" : ["2","4"]
+		},
+		{
+			"fisier":"poza_maimuta.jpg",
+			"descriere":"Pești",
+			"sfert_ora" : ["1","3"]
+		},
+		{
+			"fisier":"poza_maimuta.jpg",
+			"descriere":"Hamsteri",
+			"sfert_ora" : ["2","4"]
+		},
+		{
+			"fisier":"poza_maimuta.jpg",
+			"descriere":"Pești",
+			"sfert_ora" : ["1","3"]
+		},
+		{
+			"fisier":"poza_maimuta.jpg",
+			"descriere":"Pisicuțe",
+			"sfert_ora" : ["1","3","2","4"]
+			
 		}
 	]
 }

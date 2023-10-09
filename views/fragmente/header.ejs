@@ -3,7 +3,7 @@
     <picture>
         <source media="(max-width: 600px)" srcset="./resurse/Imagini/animale-companie.png">
         <source media="(max-width: 1000px)" srcset="./resurse/Imagini/animale-companie.png">
-        <img src="/resurse/Imagini/animale-companie.png" alt="imagine-sigla">
+        <img class=main-pic src="/resurse/Imagini/animale-companie.png" alt="imagine-sigla">
     </picture>
     <p id="watermark">&copy; Lemnaru<br>Amedeea-Elena</p>
 </header>
@@ -28,7 +28,15 @@
         </li>
         <li><a href="#caini"> Câini </a>
             <ul>
-                <li><a href="#hrana_caini"> Hrană pentru câini </a></li>
+                <li><a href="/produse"> Hrană pentru câini </a>
+                    <ul>
+                        <% for(let optM of locals.optiuniMeniu) { %>
+                            <li>
+                                <a href="/produse?tip=<%- optM.unnest  %>"><%= optM.unnest %></a>
+                            </li>
+                        <% } %>
+                    </ul>
+                </li>
                 <li><a href="#igiena_caini"> Igiena și îngrijire</a></li>
                 <li><a href="#accesorii_caini"> Accesorii și jucării</a></li>
             </ul>

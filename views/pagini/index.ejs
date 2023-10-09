@@ -12,26 +12,30 @@
     <meta name="description"
         content="Little's PetShop. magazin de animale. hrană pentru animale. hăinuțe pentru animale. jucării pentru animale.">
     <!-- descrierea paginii, adesea apare sub link când sunt afișate rezultatele căutării -->
+    <link rel="stylesheet" href="/resurse/css/galerie_statica.css" type="text/css" />
      
     <%- include("../fragmente/head.ejs")  %>        
 </head>
-
+<%- include("../fragmente/header.ejs")  %>
 <body>
-    <%- include("../fragmente/header.ejs")  %>  
+      
     <main>
         <!-- <h1>
             Little's PetShop
         </h1> -->
         <div id="grid-pagina">
             <section id="welcome">
-                <h2>
-                    Bine ați venit!
-                </h2>
+                <div id="text_reflectat_c">
+                    <div id="text_baza">
+                        Bine ați venit!
+                    </div>
+                    <div id="text_reflectat">
+                        Bine ați venit!
+                    </div>
+                </div>
                 <p>Magazinul nostru online vă stă la dispoziție non-stop, astfel încât puteți comanda în orice moment cele mai bune și <b> ieftine </b> produse și puteți beneficia de cele mai tari <b> promoții </b> și <b> oferte </b>.</p>
                 <section id="despre_noi">
-                    <h3>
-                        Despre noi
-                    </h3>
+                    <h2>Despre noi</h2>
                         <strong>
                             Scopul nostru este să aducem bucurie în viaţa animalelor de companie şi a proprietarilor acestora și să îmbunătăţim relaţia dintre <b> animale </b> şi oameni.
                         </strong>
@@ -96,7 +100,7 @@
                         </caption>
                         <thead>
                             <tr class="tabel_grosime">
-                            <th rowspan="2">Vârsta (luni)</th>
+                            <th>Vârsta (luni)</th>
                             <th>Mese</th>
                             <th>5 kg</th>
                             <th>15 kg</th>
@@ -184,6 +188,11 @@
                     <track default src="/resurse/video/subtitrari_ro.vtt" kind="captions" srclang="ro" label="romana"/>
                     <track  src="/resurse/video/subtitrari_en.vtt" kind="captions" srclang="en" label="engleza"/>
                 </video>
+                <p>
+
+                    
+                </p>
+                <%- include("../fragmente/galerie.ejs")  %> 
             </section>
         </div>
         <a href="#top" id="link_top"  title="Înapoi sus">

@@ -4,18 +4,44 @@ const path=require('path');
 const sharp=require('sharp');
 const sass=require('sass');
 const ejs=require('ejs');
+const {Client}=require('pg');
+
+
+var client= new Client({database:"petshop",
+        user:"lemnaruamedeea",
+        password:"1234",
+        host:"localhost",
+        port:5432});
+client.connect();
+
+
+client.query("select * from hrana_caini ", function(err, rez){
+    console.log("Eroare BD", err);
+    console.log("Rezultat BD", rez)
+});
+
 
 obGlobal={
     obErori:null,
     obImagini:null,
     folderScss: path.join(__dirname, "resurse/scss"),
     folderCss: path.join(__dirname, "resurse/css"),
-    folderBackup: path.join(__dirname, "backup")
+    folderBackup: path.join(__dirname, "backup"),
+    optiuniMeniu:[]
 }
 app= express();
 console.log("Folder proiect", __dirname);
 console.log("Cale fisier", __filename);
 console.log("Director de lucru", process.cwd());
+
+client.query("select * from unnest(enum_range(null::tipuri_hrana))", function(err, rezTipuri){
+    if(err){
+        console.log(err);
+    }
+    else{
+        obGlobal.optiuniMeniu=rezTipuri.rows;
+    }
+});
 
 vectorFoldere=["temp", "temp1","backup"]
 for (let folder of vectorFoldere){
@@ -30,6 +56,13 @@ app.set("view engine","ejs");
 
 app.use("/resurse", express.static(__dirname+"/resurse"));
 
+app.use("/node_modules", express.static(__dirname+"/node_modules"));
+
+app.use("/*",function(req, res, next){
+    res.locals.optiuniMeniu=obGlobal.optiuniMeniu; //adaug optiuniMeniu in locals
+    next(); //vreau sa nu se opreasca la prima care se potriveste, asa ca folosesc next ca sa trec prin toate
+})
+
 app.use(/^\/resurse(\/[a-zA-Z0-9]*)*$/, function(req,res){
     afisareEroare(res,403);
 });
@@ -39,12 +72,102 @@ app.get("/favicon.ico", function(req,res){
 })
 
 app.get(["/index","/","/home" ], function(req, res){
-    res.render("pagini/index" , {ip: req.ip});
+    res.render("pagini/index" , {ip: req.ip, imagini:obGlobal.obImagini.imagini});
 })
 
 app.get("/despre", function(req, res){
     res.render("pagini/despre");
 })
+
+app.get("/produse",function(req, res){
+    //TO DO query pentru a selecta toate produsele
+    //TO DO se adauaga filtrarea dupa tipul produsului
+    //TO DO se selecteaza si toate valorile din enum-ul categ_prajitura
+    
+    client.query("select * from unnest(enum_range(null::categ_hrana))", function(err, rezCategorie){
+        if(err){
+            console.log(err);
+        }
+        else{
+        let conditieWhere="";
+        if(req.query.tip)
+            conditieWhere=` where tip_hrana='${req.query.tip}'`
+        client.query("select * from hrana_caini"+conditieWhere , function( err, rez){
+            console.log(300)
+            if(err){
+                console.log(err);
+                afisareEroare(res, 2);
+            }
+            else{
+                console.log(rez);
+                res.render("pagini/produse", {produse:rez.rows, optiuni:rezCategorie.rows});
+            }
+        });
+    }
+    })
+
+
+});
+
+
+app.get("/produs/:id",function(req, res){
+    console.log(req.params);
+   
+    client.query(`select * from hrana_caini where id=${req.params.id}`, function( err, rezultat){
+        if(err){
+            console.log(err);
+            afisareEroare(res, 2);
+        }
+        else
+            res.render("pagini/produs", {prod:rezultat.rows[0]});
+    });
+});
+
+
+///////// EXAMEN //////
+app.get("/extraterestri",function(req, res){
+    client.query("select * from extraterestri", function( err, rez){
+            
+        if(err){
+            console.log(err);
+            afisareEroare(res, 2);
+        }
+        else{
+            console.log(rez);
+            res.render("pagini/extraterestri", {extraterestri:rez.rows});
+        }
+    });
+})
+
+
+app.get("/extraterestri",function(req, res){
+        
+        client.query("select nume from extraterestri", function(err, rezCategorie){
+            if(err){
+                console.log(err);
+            }
+            else{
+            let conditieWhere="";
+            if(req.query.nume)
+                conditieWhere=` where nume='${req.query.nume}'`
+            client.query("select * from extraterestri"+conditieWhere , function( err, rez){
+                console.log(300)
+                if(err){
+                    console.log(err);
+                    afisareEroare(res, 2);
+                }
+                else{
+                    console.log(rez);
+                    res.render("pagini/extraterestri", {extraterestri:rez.rows, optiuni:rezCategorie.rows});
+                }
+            });
+        }
+        })
+    
+    
+    });
+
+
 
 app.get("/*.ejs",function(req, res){
     afisareEroare(res,400);
@@ -120,7 +243,6 @@ function compileazaScss(caleScss, caleCss){
         caleCss=path.join(obGlobal.folderCss,caleCss )
     
     
-    // la acest punct avem cai absolute in caleScss si  caleCss
     let vectorCale=caleCss.split("\\");
     let numeFisCss=vectorCale[vectorCale.length-1];
     if (fs.existsSync(caleCss)){

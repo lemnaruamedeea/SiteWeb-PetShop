@@ -20,10 +20,11 @@ body{
     --culoare-border-buton: black;
     --culoare-tranzitie: #76c0eb;
     
+    
 }
 
 nav{
-    --text-meniu: black;
+    
     background-color: var(--culoare-meniu) ;
     /* width:100%; */
     width: calc(100vw - 18px);
@@ -83,7 +84,7 @@ ul.meniu{
 }
 
 #acasa_text{
-    color: var(--text-meniu);
+    color: transparent;
 }
 
 #acasa_meniu:hover #acasa_text{

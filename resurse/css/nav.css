@@ -22,7 +22,6 @@ body {
 }
 
 nav {
-  --text-meniu: black;
   background-color: var(--culoare-meniu);
   /* width:100%; */
   width: calc(100vw - 18px);
@@ -78,7 +77,7 @@ ul.meniu ul {
 }
 
 #acasa_text {
-  color: var(--text-meniu);
+  color: transparent;
 }
 
 #acasa_meniu:hover #acasa_text {
